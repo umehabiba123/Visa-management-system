@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+
+{% block extra_styles %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .visa-header {
+        background-color: #f5f5f5;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .visa-info {
+        margin-top: 20px;
+    }
+
+    .visa-photo {
+        max-width: 100px;
+        margin-right: 20px;
+    }
+
+    .visa-details,
+    .visa-photo-details {
+        display: flex;
+        align-items: center;
+    }
+
+    .visa-details table {
+        width: 100%;
+    }
+
+    .visa-details td,
+    .visa-details th {
+        padding: 8px;
+    }
+
+    .sponsor-info {
+        margin-top: 20px;
+    }
+</style>
+{% endblock extra_styles %}
+{% block content %}
+<div class="container">
+    <div class="visa-header">
+        <h2>SULTANATE OF OMAN</h2>
+        <h3>ROYAL OMAN POLICE</h3>
+        <h4>DIRECTORATE GENERAL OF PASSPORTS & RESIDENCE</h4>
+    </div>
+
+    <div class="visa-info card ">
+        <div class="card-body">
+            <div class="row">
+                <h5 class="card-title">Visa Confirmation</h5>
+                <p class="card-text ">
+                    Your visa application has been approved. Please note the use by date. You must enter Oman on or
+                    before this date, otherwise your visa will be invalid.
+                </p>
+                
+                <div class="visa-details">
+                    <div class="visa-photo-details">
+                        <img src="/{{field.image}}" alt="{{field.image}}" class="visa-photo">
+                        <div>
+                            <h6>Employment Visa (RESIDENT)</h6>
+                            <h4>1A</h4>
+                        </div>
+                    </div>
+
+                 
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Visa Grant Date</td>
+                                <td>{{field.visa_grant_date}}</td>
+                            </tr>
+                            <tr>
+                                <td>Visa Use By Date</td>
+                                <td>{{field.visa_use_by_date}}</td>
+                            </tr>
+                            <tr>
+                                <td>Visa Application No</td>
+                                <td>{{field.visa_application_number}}</td>
+                            </tr>
+                            <tr>
+                                <td>Visa Number</td>
+                                <td>{{field.visa_number}}</td>
+                            </tr>
+                            <tr>
+                                <td>Visa Expiry Date</td>
+                                <td>{{field.visa_expiry_date}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <table class="table table-bordered mt-4">
+                    <tbody>
+                        <tr>
+                            <td>Family Name</td>
+                            <td>{{field.family_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Given Name(s)</td>
+                            <td>{{field.given_names}}</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>{{field.gender}}</td>
+                        </tr>
+                        <tr>
+                            <td>Nationality</td>
+                            <td>{{field.nationality}}</td>
+                        </tr>
+                        <tr>
+                            <td>Occupation Name</td>
+                            <td>{{field.occupation_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Travel Document Number</td>
+                            <td>{{field.travel_document_number}}</td>
+                        </tr>
+                        <tr>
+                            <td>Travel Document Expiry Date</td>
+                            <td>{{field.travel_document_expiry_date}}</td>
+                        </tr>
+                        <tr>
+                            <td>Length of Stay in Oman</td>
+                            <td>{{field.length_of_stay}} Years</td>
+                        </tr>
+                        <tr>
+                            <td>Number of Entries</td>
+                            <td>{{field.number_of_entries}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="sponsor-info">
+                    <h5>Sponsor Information</h5>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Sponsor Name</td>
+                                <td>PDO OMAN</td>
+                            </tr>
+                            <tr>
+                                <td>Sponsor Address</td>
+                                <td>225</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container mt-5 important-notes">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>IMPORTANT NOTES :</h5>
+                    <ul>
+                        <li>Passport must be valid for at least 6 months on entry to Oman.</li>
+                        <li>Visa can be used for multiple entries to Oman, once residency is granted.</li>
+                        <li>Length of stay in Oman is 2 years, and is renewable.</li>
+                        <li>Resident visa will be cancelled if holder remains outside Oman for a period longer than 6 months.</li>
+                        <li>Residency can be renewed every 2 years.</li>
+                        <li>The fine for late renewal or non-registration of the residence permit is OMR 20 per month.</li>
+                        <li>Possession of a valid visa does not guarantee that a traveller will be granted entry to Oman. Entry to Oman is at the discretion of the Royal Oman Police officer at the port of entry.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-right">
+                    <h5>ملاحظات مهمة:</h5>
+                    <ul>
+                        <li>أن يكون طالب التأشيرة لديه جواز سفر ساري المفعول لمدة لا تقل عن 6 أشهر.</li>
+                        <li>يمكن استخدام تأشيرة متعددة الرحلات للدخول إلى السلطنة بعد منح الإقامة.</li>
+                        <li>مدة الإقامة في سلطنة عمان لا تتعدى سنتين وقابلة للتجديد بنفس المدة.</li>
+                        <li>تعتبر التأشيرة لاغية في حالة عدم عودة حاملها إلى السلطنة لفترة أكثر من 6 أشهر.</li>
+                        <li>يمكن تجديد الإقامة كل سنتين.</li>
+                        <li>غرامة تأخير التجديد أو عدم تسجيل الإقامة 20 ريالاً عمانياً عن كل شهر.</li>
+                        <li>حصولك على تأشيرة صالحة لا يضمن لك الدخول إلى السلطنة، حيث يخضع هذا الإجراء للسلطة المختصة في المنفذ.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-note">
+                <p class="note">IMPORTANT NOTES: Entry will not be allowed with different passport details other than those mentioned on the visa.</p>
+                <p class="note">ملاحظات مهمة: لن يسمح بالدخول مع بيانات جواز سفر مغايرة للبيانات المذكورة في التأشيرة.</p>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock content %}
